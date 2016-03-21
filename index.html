@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="PokeDex">
+<head>
+    <meta charset="UTF-8">
+    <title>PokeDex Project</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="page-header">
+    <h1>Example page header <small>Subtext for header</small></h1>
+</div>
+<div class="container" ng-view>
+
+</div>
+
+<script src="vendor/angular.min.js"></script>
+<script src="vendor/angular-route.js"></script>
+<script src="app/index.module.js"></script>
+<script src="app/index.config.js"></script>
+<script src="app/index.route.js"></script>
+<script src="app/services/pokeapi.service.js"></script>
+<script src="app/main/MainCtrl.js"></script>
+
+</body>
+</html>

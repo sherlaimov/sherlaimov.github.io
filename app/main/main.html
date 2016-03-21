@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="pokemon in mainCtrl.pokemons">
+        <div class="thumbnail">
+            <img src="http://pokeapi.co/media/img/{{pokemon.id}}.png " alt="...">
+            <div class="caption">
+                <h3>{{pokemon.name}}</h3>
+                <p>...</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div>
+        </div>
+    </div>
+    <buton class="btn btn-primary" ng-click="mainCtrl.findPrev()">Previous</buton>
+    <buton class="btn btn-primary" ng-click="mainCtrl.findNext()">Next</buton>
+</div>
