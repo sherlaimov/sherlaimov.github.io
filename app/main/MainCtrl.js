@@ -10,10 +10,9 @@ function MainCtrl(pokeApi) {
         console.log(e);
     }
 
-    main.blah = 'blah';
-
-    function _updateModel(direction, metaUrl) {
-        pokeApi.find(direction, metaUrl)
+    function _updateModel(metaUrl) {
+        console.log(metaUrl);
+        pokeApi.find(metaUrl)
             .then(function (result) {
                  main.pokemons = result.data.objects.map(function (obj) {
                     return {
@@ -38,14 +37,13 @@ function MainCtrl(pokeApi) {
     _updateModel();
 
     function _findNext(){
-        var next = 'next';
-        _updateModel(next, main.meta.next);
+        _updateModel(main.meta.next);
     }
     main.findNext = _findNext;
 
     function _findPrev(){
-        var next = 'prev';
-        _updateModel(next, main.meta.previous);
+        if ( main.meta.previous !== null)
+        _updateModel(main.meta.previous);
     }
     main.findPrev = _findPrev;
 
