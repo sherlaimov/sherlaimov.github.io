@@ -5,6 +5,7 @@ function MainCtrl(pokeApi) {
     var main = this;
     main.pokemons = {};
     main.meta = {};
+    main.pokemon = {};
 
     function _showError(e) {
         console.log(e);
@@ -15,10 +16,12 @@ function MainCtrl(pokeApi) {
         pokeApi.find(metaUrl)
             .then(function (result) {
                  main.pokemons = result.data.objects.map(function (obj) {
+                     //console.log(obj.types);
                     return {
                         name: obj.name,
                         id: obj.national_id,
-                        sprites: obj.sprites
+                        sprites: obj.sprites,
+                        types: obj.types
                     };
                 });
                 main.meta = {
@@ -28,7 +31,7 @@ function MainCtrl(pokeApi) {
                     previous: result.data.meta.previous,
                     total_count: result.data.meta.total_count
                 };
-                console.log(main.meta);
+                //console.log(main.meta);
                 console.log(main.pokemons);
 
             })
@@ -46,6 +49,35 @@ function MainCtrl(pokeApi) {
         _updateModel(main.meta.previous);
     }
     main.findPrev = _findPrev;
+
+    function _findById(id){
+        console.log(id);
+        pokeApi.findById(id)
+            .then(function(result){
+                console.log(result);
+                for(var i in result.data) {
+                    main.pokemon[i] = result.data[i];
+                    //console.log(i);
+                }
+                    //return {
+                    //    name: obj.name,
+                    //    type: obj.type,
+                    //    attack: obj.attack,
+                    //    defense: obj.defense,
+                    //    hp: obj.hp,
+                    //    sp_atk: obj.sp_atk,
+                    //    sp_def: obj.sp_def,
+                    //    speed: obj.speed,
+                    //    weight: obj.weight,
+                    //    moves: obj.moves.length
+                    //}
+
+                console.log(main.pokemon.types);
+            })
+            .catch(_showError);
+    }
+    main.findById = _findById;
+
 
 
 }
