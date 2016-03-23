@@ -1,0 +1,18 @@
+.pika-box{
+    height: 350px;
+    text-align:center;
+    margin:auto;
+}
+
+.pika-img.thumbnail {
+    height: 150px;
+    margin-bottom: 0;
+}
+
+.pika-box h3 {
+    text-align: center;
+}
+
+.pika-box ul {
+    margin-bottom: 1em;
+}

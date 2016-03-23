@@ -1,19 +1,28 @@
 <div class="row">
-    <div class="col-sm-6 col-md-3" ng-repeat="pokemon in mainCtrl.pokemons">
-        <div class="thumbnail">
-            <img src="http://pokeapi.co/media/img/{{pokemon.id}}.png " alt="{{pokemon.name}}">
-            <div class="caption">
-                <h3>{{pokemon.name}}</h3>
-                <ul class="nav nav-pills" role="tablist">
-                    <li ng-repeat="type in pokemon.types"><a href="#"><span class="badge">{{type.name}}</span></a></li>
-                </ul>
-                <p><a href="javascript:void(0)" ng-click="mainCtrl.findById(pokemon.id)" class="btn btn-primary" role="button">Button</a>
+    <div class="col-sm-6 col-md-9">
+        <div class="row">
+            <div class="col-sm-6 col-md-4" ng-repeat="pokemon in mainCtrl.pokemons">
+                <div class="thumbnail pika-box">
+                    <div class="thumbnail pika-img">
+                        <img src="http://pokeapi.co/media/img/{{pokemon.id}}.png " alt="{{pokemon.name}}">
+                    </div>
+                    <div class="caption">
+                        <h3>{{pokemon.name}}</h3>
+                        <ul class="nav nav-pills" role="tablist">
+                            <li ng-repeat="type in pokemon.types"><span class="badge">{{type.name}}</span>
+                            </li>
+                        </ul>
+                        <p><a href="javascript:void(0)" ng-click="mainCtrl.findById(pokemon.id)" class="btn btn-primary"
+                              role="button">More info</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="col-sm-6 col-md-3">
         <ul class="list-group">
-            <img src="http://pokeapi.co/media/img/{{mainCtrl.pokemon.national_id}}.png " alt="{{mainCtrl.pokemon.name}}">
+            <img src="http://pokeapi.co/media/img/{{mainCtrl.pokemon.national_id}}.png "
+                 alt="{{mainCtrl.pokemon.name}}">
             <h4>{{mainCtrl.pokemon.name}}</h4>
             <li class="list-group-item">
                 Attack <span class="badge">{{mainCtrl.pokemon.attack}}</span>
@@ -35,6 +44,12 @@
             </li>
         </ul>
     </div>
-    <buton class="btn btn-primary" ng-click="mainCtrl.findPrev()">Previous</buton>
-    <buton class="btn btn-primary" ng-click="mainCtrl.findNext()">Next</buton>
+
 </div>
+
+<div class="row">
+    <div class="col-sm-6 col-md-9">
+        <buton class="btn btn-primary" ng-click="mainCtrl.findPrev()">Previous</buton>
+        <buton class="btn btn-primary" ng-click="mainCtrl.findNext()">Next</buton>
+        </div>
+    </div>
