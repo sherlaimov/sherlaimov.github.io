@@ -19,8 +19,8 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-md-3">
-        <ul class="list-group">
+    <div class="col-sm-6 col-md-3 info-box">
+        <ul class="list-group" ng-if="mainCtrl.pokemon">
             <img src="http://pokeapi.co/media/img/{{mainCtrl.pokemon.national_id}}.png "
                  alt="{{mainCtrl.pokemon.name}}">
             <h4>{{mainCtrl.pokemon.name}}</h4>
@@ -42,6 +42,15 @@
             <li class="list-group-item">
                 SP Defense <span class="badge">{{mainCtrl.pokemon.sp_def}}</span>
             </li>
+            <li class="list-group-item">
+                Speed <span class="badge">{{mainCtrl.pokemon.speed}}</span>
+            </li>
+            <li class="list-group-item">
+                Weight <span class="badge">{{mainCtrl.pokemon.weight}}</span>
+            </li>
+            <li class="list-group-item">
+                Total moves <span class="badge">{{mainCtrl.pokemon.moves.length}}</span>
+            </li>
         </ul>
     </div>
 
@@ -49,7 +58,7 @@
 
 <div class="row">
     <div class="col-sm-6 col-md-9">
-        <buton class="btn btn-primary" ng-click="mainCtrl.findPrev()">Previous</buton>
-        <buton class="btn btn-primary" ng-click="mainCtrl.findNext()">Next</buton>
-        </div>
+        <buton class="btn btn-primary pull-left" ng-if="mainCtrl.meta.previous" ng-click="mainCtrl.findPrev()">Previous</buton>
+        <buton class="btn btn-primary pull-right" ng-if="mainCtrl.meta.next" ng-click="mainCtrl.findNext()">Next</buton>
     </div>
+</div>

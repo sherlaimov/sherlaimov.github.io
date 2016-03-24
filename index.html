@@ -5,15 +5,27 @@
     <title>PokeDex Project</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pace.css">
 </head>
 <body>
-<div class="page-header">
-    <h1>Example page header <small>Subtext for header</small></h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-9">
+            <header>
+                <h1>Pokedex</h1>
+            </header>
+        </div>
+    </div>
 </div>
-<div class="container" ng-view>
+<div class="container" ng-view></div>
 
+<div class="container">
+    <footer>
+        <p><a href="https://twitter.com/sherlaimov" target="_blank">sherlaimov </a> for <a href="http://kottans.org/" target="_blank">Kottans</a></p>
+    </footer>
 </div>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
 <script src="vendor/angular.min.js"></script>
 <script src="vendor/angular-route.js"></script>
 <script src="app/index.module.js"></script>
@@ -21,6 +33,8 @@
 <script src="app/index.route.js"></script>
 <script src="app/services/pokeapi.service.js"></script>
 <script src="app/main/MainCtrl.js"></script>
+<script src="vendor/helper.js"></script>
+<script src="vendor/pace.js"></script>
 
 </body>
 </html>

@@ -1,7 +1,17 @@
+header {
+    width: 50%;
+    margin: 0 auto;
+}
+header h1 {
+    padding: 1em;
+    border: 2px solid #1F2529;
+    text-align: center;
+
+}
+
 .pika-box{
     height: 350px;
     text-align:center;
-    margin:auto;
 }
 
 .pika-img.thumbnail {
@@ -15,4 +25,29 @@
 
 .pika-box ul {
     margin-bottom: 1em;
+}
+
+.info-box {
+    width: 263px;
+}
+
+.info-box-sticky {
+    position: fixed;
+    right: 396px;
+    top: 0;
+    z-index:100;
+}
+
+footer {
+    /*background-color: rgb(206, 206, 207);*/
+    position: relative;
+    height: 150px;
+    color: rgb(206, 206, 207);
+
+}
+footer p {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    font-weight:300;
 }
