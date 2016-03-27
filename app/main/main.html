@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-6 col-md-4" ng-repeat="pokemon in mainCtrl.pokemons">
                 <div class="thumbnail pika-box">
-                    <div class="thumbnail pika-img">
+                    <div class="pika-img">
                         <img src="http://pokeapi.co/media/img/{{pokemon.id}}.png " alt="{{pokemon.name}}">
                     </div>
                     <div class="caption">
@@ -19,46 +19,57 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-md-3 info-box">
-        <ul class="list-group" ng-if="mainCtrl.pokemon">
-            <img src="http://pokeapi.co/media/img/{{mainCtrl.pokemon.national_id}}.png "
-                 alt="{{mainCtrl.pokemon.name}}">
-            <h4>{{mainCtrl.pokemon.name}}</h4>
-            <li class="list-group-item">
-                Attack <span class="badge">{{mainCtrl.pokemon.attack}}</span>
-            </li>
-            <li class="list-group-item">
-                Type <span class="badge" ng-repeat="type in mainCtrl.pokemon.types">{{type.name}}</span>
-            </li>
-            <li class="list-group-item">
-                Defense <span class="badge">{{mainCtrl.pokemon.defense}}</span>
-            </li>
-            <li class="list-group-item">
-                HP <span class="badge">{{mainCtrl.pokemon.hp}}</span>
-            </li>
-            <li class="list-group-item">
-                SP Attack <span class="badge">{{mainCtrl.pokemon.sp_atk}}</span>
-            </li>
-            <li class="list-group-item">
-                SP Defense <span class="badge">{{mainCtrl.pokemon.sp_def}}</span>
-            </li>
-            <li class="list-group-item">
-                Speed <span class="badge">{{mainCtrl.pokemon.speed}}</span>
-            </li>
-            <li class="list-group-item">
-                Weight <span class="badge">{{mainCtrl.pokemon.weight}}</span>
-            </li>
-            <li class="list-group-item">
-                Total moves <span class="badge">{{mainCtrl.pokemon.moves.length}}</span>
-            </li>
-        </ul>
+    <div class="col-sm-6 col-md-3">
+        <div class="info-box">
+            <ul class="list-group" ng-if="mainCtrl.pokemon">
+                <img src="http://pokeapi.co/media/img/{{mainCtrl.pokemon.national_id}}.png "
+                     alt="{{mainCtrl.pokemon.name}}">
+                <h4>{{mainCtrl.pokemon.name}}</h4>
+                <li class="list-group-item">
+                    Attack <span class="badge">{{mainCtrl.pokemon.attack}}</span>
+                </li>
+                <li class="list-group-item">
+                    Type <span class="badge" ng-repeat="type in mainCtrl.pokemon.types">{{type.name}}</span>
+                </li>
+                <li class="list-group-item">
+                    Defense <span class="badge">{{mainCtrl.pokemon.defense}}</span>
+                </li>
+                <li class="list-group-item">
+                    HP <span class="badge">{{mainCtrl.pokemon.hp}}</span>
+                </li>
+                <li class="list-group-item">
+                    SP Attack <span class="badge">{{mainCtrl.pokemon.sp_atk}}</span>
+                </li>
+                <li class="list-group-item">
+                    SP Defense <span class="badge">{{mainCtrl.pokemon.sp_def}}</span>
+                </li>
+                <li class="list-group-item">
+                    Speed <span class="badge">{{mainCtrl.pokemon.speed}}</span>
+                </li>
+                <li class="list-group-item">
+                    Weight <span class="badge">{{mainCtrl.pokemon.weight}}</span>
+                </li>
+                <li class="list-group-item">
+                    Total moves <span class="badge">{{mainCtrl.pokemon.moves.length}}</span>
+                </li>
+            </ul>
+        </div>
     </div>
 
 </div>
 
 <div class="row">
     <div class="col-sm-6 col-md-9">
-        <buton class="btn btn-primary pull-left" ng-if="mainCtrl.meta.previous" ng-click="mainCtrl.findPrev()">Previous</buton>
+        <buton class="btn btn-primary pull-left" ng-if="mainCtrl.meta.previous" ng-click="mainCtrl.findPrev()">
+            Previous
+        </buton>
         <buton class="btn btn-primary pull-right" ng-if="mainCtrl.meta.next" ng-click="mainCtrl.findNext()">Next</buton>
+
+        <pagination ng-if="mainCtrl.meta" meta="mainCtrl.meta"></pagination>
+        <div ng-controller="PaginationCtrl">
+            <uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize"
+                            class="pagination-sm"
+                            boundary-links="true" force-ellipses="true"></uib-pagination>
+        </div>
     </div>
 </div>

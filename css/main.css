@@ -31,9 +31,17 @@ header h1 {
     width: 263px;
 }
 
+.info-box img {
+    display: block;
+    margin: 0 auto;
+}
+
+.info-box h4 {
+    text-align: center;
+}
+
 .info-box-sticky {
     position: fixed;
-    right: 396px;
     top: 0;
     z-index:100;
 }

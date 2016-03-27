@@ -2,6 +2,6 @@
     'use strict';
 
     angular
-        .module('PokeDex', ['ngRoute']);
+        .module('PokeDex', ['ngRoute', 'ui.bootstrap']);
 
 })();
