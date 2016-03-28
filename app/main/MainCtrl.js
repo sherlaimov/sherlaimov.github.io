@@ -1,25 +1,36 @@
 angular.module('PokeDex')
-    .controller('MainCtrl', ['PokeApi', MainCtrl]);
+    .controller('MainCtrl', ['$scope', 'PokeApi', MainCtrl]);
 
-function MainCtrl(pokeApi) {
+function MainCtrl($scope, pokeApi) {
     var main = this;
     main.pokemons = {};
     main.meta = {};
     main.pokemon = null;
+
+    $scope.currentPage = 1;
+    $scope.maxSize = 12;
 
     function _showError(e) {
         console.log(e);
     }
 
     function _paginationInit(){
-        main.numberOfPages = Math.ceil(main.meta.total_count / main.meta.limit);
+        $scope.itemsPerPage = main.meta.limit;
+        $scope.totalItems = main.meta.total_count;
+
+    }
+
+    $scope.findPage = function findPage(){
+        var offset = $scope.currentPage * $scope.itemsPerPage - $scope.itemsPerPage;
+        var url = 'api/v1/pokemon/?limit=' + $scope.itemsPerPage + '&offset=' + offset;
+        console.log(url);
+        _updateModel(url);
     }
 
     function _updateModel(metaUrl) {
         pokeApi.find(metaUrl)
             .then(function (result) {
                  main.pokemons = result.data.objects.map(function (obj) {
-                     //console.log(obj.types);
                     return {
                         name: obj.name,
                         id: obj.national_id,
@@ -36,7 +47,6 @@ function MainCtrl(pokeApi) {
                 };
                 _paginationInit();
                 console.log(main.meta);
-                console.log(main.numberOfPages);
 
             })
             .catch(_showError);
@@ -100,38 +110,4 @@ angular.module('PokeDex')
         };
     });
 
-angular.module('PokeDex')
-    .controller('PaginationCtrl',['$scope', 'PokeApi', PaginationCtrl]);
 
-function PaginationCtrl($scope, PokeApi){
-    var page = this;
-    console.log($scope);
-
-    //$scope.totalItems = 64;
-    //$scope.currentPage = 4;
-    //$scope.setPage = function (pageNo) {
-    //    $scope.currentPage = pageNo;
-    //};
-
-    //$scope.pageChanged = function() {
-    //    $log.log('Page changed to: ' + $scope.currentPage);
-    //};
-
-    $scope.maxSize = 5;
-    $scope.bigTotalItems = 175;
-    $scope.bigCurrentPage = 1;
-
-    PokeApi.find()
-        .then(function(result){
-            $scope.meta = {
-                limit: result.data.meta.limit,
-                next: result.data.meta.next,
-                offset: result.data.meta.offset,
-                previous: result.data.meta.previous,
-                total_count: result.data.meta.total_count
-            };
-            console.log($scope.meta);
-        })
-        .catch(alert);
-    console.log($scope.meta);
-}

@@ -60,16 +60,15 @@
 
 <div class="row">
     <div class="col-sm-6 col-md-9">
-        <buton class="btn btn-primary pull-left" ng-if="mainCtrl.meta.previous" ng-click="mainCtrl.findPrev()">
-            Previous
-        </buton>
-        <buton class="btn btn-primary pull-right" ng-if="mainCtrl.meta.next" ng-click="mainCtrl.findNext()">Next</buton>
+        <!--<buton class="btn btn-primary pull-left" ng-if="mainCtrl.meta.previous" ng-click="mainCtrl.findPrev()">-->
+            <!--Previous-->
+        <!--</buton>-->
+        <!--<buton class="btn btn-primary pull-right" ng-if="mainCtrl.meta.next" ng-click="mainCtrl.findNext()">Next</buton>-->
 
-        <pagination ng-if="mainCtrl.meta" meta="mainCtrl.meta"></pagination>
-        <div ng-controller="PaginationCtrl">
-            <uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize"
+        <!--<pagination ng-if="mainCtrl.meta" meta="mainCtrl.meta"></pagination>-->
+
+            <uib-pagination total-items="totalItems" items-per-page="itemsPerPage" ng-change="findPage()" ng-model="currentPage" max-size="maxSize"
                             class="pagination-sm"
                             boundary-links="true" force-ellipses="true"></uib-pagination>
-        </div>
     </div>
 </div>
