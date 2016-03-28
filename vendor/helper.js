@@ -9,4 +9,11 @@ $(window).scroll(function(e){
     {
         $el.removeClass('info-box-sticky');
     }
+    var options = {
+        placement: 'top',
+        html: true,
+        template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
+    };
+    $('[data-toggle="tooltip"]').tooltip(options);
+
 });

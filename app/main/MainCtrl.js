@@ -23,7 +23,6 @@ function MainCtrl($scope, pokeApi) {
     $scope.findPage = function findPage(){
         var offset = $scope.currentPage * $scope.itemsPerPage - $scope.itemsPerPage;
         var url = 'api/v1/pokemon/?limit=' + $scope.itemsPerPage + '&offset=' + offset;
-        console.log(url);
         _updateModel(url);
     }
 

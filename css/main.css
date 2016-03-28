@@ -1,3 +1,26 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+.page-wrap {
+    min-height: 100%;
+    /*height: 100%;*/
+    /* equal to footer height */
+    margin-bottom: -150px;
+}
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+
+.footer, .page-wrap:after {
+    height: 150px;
+}
+
 header {
     width: 50%;
     margin: 0 auto;
@@ -9,21 +32,21 @@ header h1 {
 
 }
 
-.pika-box{
+.poke-box{
     height: 350px;
     text-align:center;
 }
 
-.pika-img.thumbnail {
+.poke-img {
     height: 150px;
     margin-bottom: 0;
 }
 
-.pika-box h3 {
+.poke-box h3 {
     text-align: center;
 }
 
-.pika-box ul {
+.poke-box ul {
     margin-bottom: 1em;
 }
 
@@ -46,16 +69,15 @@ header h1 {
     z-index:100;
 }
 
-footer {
-    /*background-color: rgb(206, 206, 207);*/
+
+.footer {
     position: relative;
-    height: 150px;
     color: rgb(206, 206, 207);
 
 }
 footer p {
     position: absolute;
     bottom: 0;
-    left:0;
+    left: 15px;
     font-weight:300;
 }

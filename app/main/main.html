@@ -2,8 +2,9 @@
     <div class="col-sm-6 col-md-9">
         <div class="row">
             <div class="col-sm-6 col-md-4" ng-repeat="pokemon in mainCtrl.pokemons">
-                <div class="thumbnail pika-box">
-                    <div class="pika-img">
+                <a href="" data-toggle="tooltip" title="Click for more info!">
+                <div class="thumbnail poke-box">
+                    <div class="poke-img">
                         <img src="http://pokeapi.co/media/img/{{pokemon.id}}.png " alt="{{pokemon.name}}">
                     </div>
                     <div class="caption">
@@ -16,6 +17,7 @@
                               role="button">More info</a>
                     </div>
                 </div>
+                </a>
             </div>
         </div>
     </div>
@@ -59,7 +61,7 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-6 col-md-9">
+    <div class="col-sm-6 col-md-9 text-center">
         <!--<buton class="btn btn-primary pull-left" ng-if="mainCtrl.meta.previous" ng-click="mainCtrl.findPrev()">-->
             <!--Previous-->
         <!--</buton>-->
@@ -68,7 +70,8 @@
         <!--<pagination ng-if="mainCtrl.meta" meta="mainCtrl.meta"></pagination>-->
 
             <uib-pagination total-items="totalItems" items-per-page="itemsPerPage" ng-change="findPage()" ng-model="currentPage" max-size="maxSize"
-                            class="pagination-sm"
+                            class="pagination"
                             boundary-links="true" force-ellipses="true"></uib-pagination>
+
     </div>
 </div>

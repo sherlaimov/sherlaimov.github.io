@@ -8,24 +8,27 @@
     <link rel="stylesheet" href="css/pace.css">
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 col-md-9">
-            <header>
-                <h1>Pokedex</h1>
-            </header>
+<div class="page-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-9">
+                <header>
+                    <h1>Pokedex</h1>
+                </header>
+            </div>
         </div>
     </div>
+    <div class="container" ng-view></div>
 </div>
-<div class="container" ng-view></div>
-
-<div class="container">
-    <footer>
-        <p><a href="https://twitter.com/sherlaimov" target="_blank">sherlaimov </a> for <a href="http://kottans.org/" target="_blank">Kottans</a></p>
-    </footer>
-</div>
+    <div class="container footer">
+        <footer>
+            <p><a href="https://twitter.com/sherlaimov" target="_blank">sherlaimov </a> for <a
+                    href="http://kottans.org/" target="_blank">Kottans</a></p>
+        </footer>
+    </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="vendor/angular.min.js"></script>
 <script src="vendor/angular-route.js"></script>
 <script src="vendor/angular-animate.min.js"></script>

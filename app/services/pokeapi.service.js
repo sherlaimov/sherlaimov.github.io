@@ -13,7 +13,6 @@
             var url = '';
             if (metaUrl !== null && metaUrl !== undefined) {
                 url = baseUrl + metaUrl;
-                //console.log(url);
             }
            else {
                 url = baseUrl + 'api/v1/pokemon/?limit=12';
