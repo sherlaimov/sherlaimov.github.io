@@ -33,10 +33,14 @@ header h1 {
 }
 
 .poke-box{
-    height: 350px;
+    height: 300px;
     text-align:center;
 }
-
+.poke-badge {
+    padding: 7px 12px;
+    margin-left: .5em;
+    margin-top: .5em;
+}
 .poke-img {
     height: 150px;
     margin-bottom: 0;

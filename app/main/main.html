@@ -1,77 +1,21 @@
 <div class="row">
     <div class="col-sm-6 col-md-9">
         <div class="row">
-            <div class="col-sm-6 col-md-4" ng-repeat="pokemon in mainCtrl.pokemons">
-                <a href="" data-toggle="tooltip" title="Click for more info!">
-                <div class="thumbnail poke-box">
-                    <div class="poke-img">
-                        <img src="http://pokeapi.co/media/img/{{pokemon.id}}.png " alt="{{pokemon.name}}">
-                    </div>
-                    <div class="caption">
-                        <h3>{{pokemon.name}}</h3>
-                        <ul class="nav nav-pills" role="tablist">
-                            <li ng-repeat="type in pokemon.types"><span class="badge">{{type.name}}</span>
-                            </li>
-                        </ul>
-                        <p><a href="javascript:void(0)" ng-click="mainCtrl.findById(pokemon.id)" class="btn btn-primary"
-                              role="button">More info</a>
-                    </div>
-                </div>
-                </a>
-            </div>
+            <poke-box pokemons="mainCtrl.pokemons"></poke-box>
         </div>
     </div>
     <div class="col-sm-6 col-md-3">
-        <div class="info-box">
-            <ul class="list-group" ng-if="mainCtrl.pokemon">
-                <img src="http://pokeapi.co/media/img/{{mainCtrl.pokemon.national_id}}.png "
-                     alt="{{mainCtrl.pokemon.name}}">
-                <h4>{{mainCtrl.pokemon.name}}</h4>
-                <li class="list-group-item">
-                    Attack <span class="badge">{{mainCtrl.pokemon.attack}}</span>
-                </li>
-                <li class="list-group-item">
-                    Type <span class="badge" ng-repeat="type in mainCtrl.pokemon.types">{{type.name}}</span>
-                </li>
-                <li class="list-group-item">
-                    Defense <span class="badge">{{mainCtrl.pokemon.defense}}</span>
-                </li>
-                <li class="list-group-item">
-                    HP <span class="badge">{{mainCtrl.pokemon.hp}}</span>
-                </li>
-                <li class="list-group-item">
-                    SP Attack <span class="badge">{{mainCtrl.pokemon.sp_atk}}</span>
-                </li>
-                <li class="list-group-item">
-                    SP Defense <span class="badge">{{mainCtrl.pokemon.sp_def}}</span>
-                </li>
-                <li class="list-group-item">
-                    Speed <span class="badge">{{mainCtrl.pokemon.speed}}</span>
-                </li>
-                <li class="list-group-item">
-                    Weight <span class="badge">{{mainCtrl.pokemon.weight}}</span>
-                </li>
-                <li class="list-group-item">
-                    Total moves <span class="badge">{{mainCtrl.pokemon.moves.length}}</span>
-                </li>
-            </ul>
-        </div>
+            <info-box ng-if="mainCtrl.pokemon" types="mainCtrl.pokemon.types" pokemon="mainCtrl.pokemon"></info-box>
     </div>
 
 </div>
 
 <div class="row">
     <div class="col-sm-6 col-md-9 text-center">
-        <!--<buton class="btn btn-primary pull-left" ng-if="mainCtrl.meta.previous" ng-click="mainCtrl.findPrev()">-->
-            <!--Previous-->
-        <!--</buton>-->
-        <!--<buton class="btn btn-primary pull-right" ng-if="mainCtrl.meta.next" ng-click="mainCtrl.findNext()">Next</buton>-->
 
-        <!--<pagination ng-if="mainCtrl.meta" meta="mainCtrl.meta"></pagination>-->
-
-            <uib-pagination total-items="totalItems" items-per-page="itemsPerPage" ng-change="findPage()" ng-model="currentPage" max-size="maxSize"
-                            class="pagination"
-                            boundary-links="true" force-ellipses="true"></uib-pagination>
-
+        <uib-pagination total-items="totalItems" items-per-page="itemsPerPage" ng-change="findPage()"
+                        ng-model="currentPage" max-size="maxSize"
+                        class="pagination"
+                        boundary-links="true" force-ellipses="true"></uib-pagination>
     </div>
 </div>
