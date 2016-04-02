@@ -1,4 +1,4 @@
-### Pokedex app based on [PokeApi](http://pokeapi.co/)
+### Pokedex App Based on [PokeApi](http://pokeapi.co/)
 
 The application outputs all the pokemons delivered by PokeApi with 12 ones per page and a pagination for you to browse through.
 
