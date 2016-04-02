@@ -19,9 +19,9 @@
             }
 
             var deferred = $q.defer();
-            var promiseFromHttp = $http.get(url);
+            var promise = $http.get(url);
 
-            promiseFromHttp
+            promise
                 .then(deferred.resolve)
                 .catch(deferred.reject);
 
@@ -41,6 +41,22 @@
         }
         pokeApi.findById = _findById;
 
+        function _getAllTypes() {
+            var url = 'http://pokeapi.co/api/v1/type/?limit=999';
+            var deferred = $q.defer();
+            $http.get(url)
+                .then(function(response){
+                    var types = response.data.objects.map(function(obj){
+                        return obj.name;
+                    });
+                    deferred.resolve({
+                        types: types
+                    })
+                }).catch(deferred.reject);
+            return deferred.promise
+        }
+        pokeApi.getAllTypes = _getAllTypes;
+        _getAllTypes();
         return pokeApi;
     }
 

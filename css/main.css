@@ -41,6 +41,66 @@ header h1 {
     margin-left: .5em;
     margin-top: .5em;
 }
+.fire {
+    background-color: #cc6e18;
+}
+
+.flying {
+    background-color: #8c69d7;
+}
+
+.water {
+    background-color: #209dd7;
+}
+
+.electric {
+    background-color: #d7a123;
+}
+
+.poison {
+    background-color: #d75e64;
+}
+
+.ground {
+    background-color: #8d5007;
+}
+
+.fairy {
+    background-color: #d87dcb;
+}
+
+.fighting {
+    background-color: #d82417;
+}
+.psychic {
+    background-color: #d8ba0a;
+}
+.grass {
+    background-color: #3cd853;
+}
+.bug {
+    background-color: #03a445;
+}
+.dragon {
+    background-color: #4aa43b;
+}
+
+.steel {
+    color: #202020;
+    background-color: #d4fbff;
+}
+
+.rock {
+     color: #ececec;
+     background-color: #06191b;
+ }
+.ghost {
+    color: #0c1115;
+    background-color: #9ad3df;
+}
+.ice {
+    background-color: #9ad3df;
+}
 .poke-img {
     height: 150px;
     margin-bottom: 0;
