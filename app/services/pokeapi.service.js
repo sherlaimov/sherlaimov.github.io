@@ -56,7 +56,6 @@
             return deferred.promise
         }
         pokeApi.getAllTypes = _getAllTypes;
-        _getAllTypes();
         return pokeApi;
     }
 
