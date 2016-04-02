@@ -1,7 +1,8 @@
 ### Pokedex app based on [PokeApi](http://pokeapi.co/)
 
-The application outputs all the pokemons delivered by PokeApi with 12 ones per page.
-Made using the *AngularJS* framework.
+The application outputs all the pokemons delivered by PokeApi with 12 ones per page and a pagination for you to browse through.
+
+Made using the **AngularJS** framework.
 
 Installation instructions:
 
